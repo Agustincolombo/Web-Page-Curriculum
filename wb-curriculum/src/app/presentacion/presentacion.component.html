@@ -1,27 +1,37 @@
-<div id="mainPresentacion" class="row bg-white d-flex h-100">
-  <section class="col p-0 d-inline-block align-self-center mx-auto text-center ">
-    <div class="row justify-content-center">
-      <img id="personalImg" src="..//public/personalImg.jpg" class="p-0 rounded-4 mb-4" />
-    </div>
-    <section id="personalName" class="row text-center">
-      <h2 class="fs-1">{{name}}</h2>
-      <h1 class="fs-2">{{profession}}</h1>
-    </section>
-    <section class="container w-25 justify-content-center">
-      <div class="col d-flex justify-content-around align-items-center py-3">
-        <img id="iconLinkedIn" src="..//public/linkedin-logo.png" class="styleIcon" />
-        <img id="iconGitHub" src="..//public/github-logo.png" class="styleIcon" />
+<div id="presentacion" class="presentacion-container">
+  <section class="hero-section">
+    <div class="hero-content">
+      <div class="profile-image-container">
+        <img id="personalImg" src="..//public/personalImg.jpg" class="profile-image" />
       </div>
-    </section>
+      <section id="personalName" class="name-section">
+        <h2 class="name">{{name}}</h2>
+        <h1 class="profession">{{profession}}</h1>
+      </section>
+      <section class="social-links">
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/tu-perfil" target="_blank" class="social-icon">
+            <img id="iconLinkedIn" src="..//public/linkedin-logo.png" class="styleIcon" />
+          </a>
+          <a href="https://github.com/tu-usuario" target="_blank" class="social-icon">
+            <img id="iconGitHub" src="..//public/github-logo.png" class="styleIcon" />
+          </a>
+        </div>
+      </section>
+    </div>
   </section>
-  <section class="col p-0 bg-gray vh-auto d-flex text-center align-items-center justify-content-center">
-    <div class="d-block">
-      <p class="fs-1">
-        Sobre mí
-      </p>
-      <p id="aboutMe" class="fs-5 container w-75">
+  
+  <section class="about-section">
+    <div class="about-content">
+      <h2 class="about-title">Sobre mí</h2>
+      <p id="aboutMe" class="about-text">
         {{aboutMe}}
       </p>
     </div>
   </section>
+  
+  <div class="scroll-indicator">
+    <div class="scroll-arrow"></div>
+    <span class="scroll-text">Desliza para ver mis proyectos</span>
+  </div>
 </div>
