@@ -4,6 +4,10 @@
 html
   font-size: 16px
   scroll-behavior: smooth
+  scroll-snap-type: y mandatory
+  overflow-x: hidden
+  margin: 0
+  padding: 0
   
   // Scaling for high-resolution displays
   @media (min-width: 1920px)
@@ -21,24 +25,70 @@ html
   font-weight: 400
   font-style: normal
 
-/*Paleta de colores*/
+/* Paleta de colores Original */
+// $color-navy: #112D4E
+// $color-blue: #3F72AF
+// $color-gray: #DBE2EF
+// $color-white: #F9F7F7
+
+/* Paleta Nueva (Dark Mode Theme) */
+$color-brand-red: #BF092F
+$color-brand-navy: #132440
+$color-brand-blue: #16476A
+$color-brand-teal: #3B9797
+$color-basic-white: #FFFFFF
+$color-basic-gray: #E0E0E0
+
+// Functional Mapping (Proposito General)
+$color-bg-body: $color-brand-navy
+$color-bg-surface: $color-brand-blue
+$color-text-main: $color-basic-white
+$color-text-muted: $color-brand-teal
+$color-accent: $color-brand-teal // Cambiado de Red a Teal. Red sigue disponible en $color-brand-red
+
+:root
+  // Semantic Variables (Standardized)
+  --color-bg-body: #{$color-bg-body}
+  --color-bg-surface: #{$color-bg-surface}
+  --color-text-main: #{$color-text-main}
+  --color-text-muted: #{$color-text-muted}
+  --color-accent: #{$color-accent}
+  --color-brand-red: #{$color-brand-red}
+  --color-brand-navy: #{$color-brand-navy}
+  --color-brand-blue: #{$color-brand-blue}
+  --color-brand-teal: #{$color-brand-teal}
+  
+  // RGB Helpers for Opacity
+  --color-bg-body-rgb: #{red($color-bg-body)}, #{green($color-bg-body)}, #{blue($color-bg-body)}
+  --color-bg-surface-rgb: #{red($color-bg-surface)}, #{green($color-bg-surface)}, #{blue($color-bg-surface)}
+  --color-accent-rgb: #{red($color-accent)}, #{green($color-accent)}, #{blue($color-accent)}
+  --color-brand-teal-rgb: #{red($color-brand-teal)}, #{green($color-brand-teal)}, #{blue($color-brand-teal)}
+
+// Legacy Support / Direct Mapping (Optional but useful for rapid transition)
+$color-navy: $color-brand-navy
+$color-blue: $color-brand-blue
+$color-gray: $color-brand-teal
+$color-white: $color-basic-white
+
 .bg-navy
-  background-color: #112D4E
+  background-color: $color-navy
   
 .bg-blue
-  background-color: #3F72AF
+  background-color: $color-blue
 
 .bg-gray
-  background-color: #DBE2EF
+  background-color: $color-gray
 
 .bg-white
-  background-color: #F9F7F7
+  background-color: $color-white
 
 body
-  width: 100vw
-  height: 100vh
+  width: 100%
+  min-height: 100vh
   overflow-x: hidden
-  scroll-behavior: smooth
+  margin: 0
+  padding: 0
+  background-color: var(--color-bg-body)
 
 .main-container
   width: 100%
@@ -56,37 +106,39 @@ body
   gap: 0.9375rem
 
 .nav-dot
-  width: 0.75rem
-  height: 0.75rem
+  width: 1rem
+  height: 1rem
   border-radius: 50%
-  background: rgba(63, 114, 175, 0.3)
+  background: transparent
   cursor: pointer
   transition: all 0.3s ease
-  border: 0.125rem solid transparent
+  border: 0.125rem solid var(--color-text-muted)
+  box-shadow: 0 0 5px rgba(0,0,0,0.5)
   
   &:hover
-    background: rgba(63, 114, 175, 0.6)
+    background: rgba(var(--color-brand-teal-rgb), 0.3)
     transform: scale(1.2)
+    border-color: var(--color-accent)
   
   &.active
-    background: #3F72AF
-    border-color: #112D4E
+    background: var(--color-brand-teal)
+    border-color: var(--color-text-main)
     transform: scale(1.3)
-    box-shadow: 0 0 0.625rem rgba(63, 114, 175, 0.5)
+    box-shadow: 0 0 0.625rem rgba(var(--color-brand-teal-rgb), 0.5)
 
 // Custom scrollbar
 ::-webkit-scrollbar
   width: 0.5rem
 
 ::-webkit-scrollbar-track
-  background: #F9F7F7
+  background: var(--color-bg-body)
 
 ::-webkit-scrollbar-thumb
-  background: linear-gradient(135deg, #3F72AF, #112D4E)
+  background: linear-gradient(135deg, var(--color-brand-teal), var(--color-brand-blue))
   border-radius: 0.25rem
   
   &:hover
-    background: linear-gradient(135deg, #112D4E, #3F72AF)
+    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-teal))
 
 // High-resolution displays adjustments
 @media (min-width: 1920px)

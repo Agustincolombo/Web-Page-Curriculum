@@ -1,18 +1,21 @@
+
 .presentacion-container
   min-height: 100vh
   position: relative
-  background: linear-gradient(135deg, #F9F7F7 0%, #DBE2EF 50%, #F9F7F7 100%)
+  background: linear-gradient(135deg, var(--color-bg-body) 0%, var(--color-bg-surface) 50%, var(--color-bg-body) 100%)
 
 .hero-section
   min-height: 100vh
+  scroll-snap-align: start
   display: flex
   align-items: center
   justify-content: center
   padding: 2rem 0
+  background-color: var(--color-bg-body)
 
 .hero-content
   text-align: center
-  max-width: 50rem
+  max-width: 90vw
   margin: 0 auto
   padding: 0 2rem
 
@@ -24,8 +27,8 @@
   height: 12.5rem
   border-radius: 50%
   object-fit: cover
-  border: 0.25rem solid #3F72AF
-  box-shadow: 0 0.625rem 1.875rem rgba(17, 45, 78, 0.2)
+  border: 0.25rem solid var(--color-brand-teal)
+  box-shadow: 0 0.625rem 1.875rem rgba(var(--color-bg-body-rgb), 0.4)
   transition: transform 0.3s ease
   
   &:hover
@@ -35,16 +38,16 @@
   margin-bottom: 2rem
 
 .name
-  font-size: 3.5rem
+  font-size: clamp(2.5rem, 5vw, 8rem)
   font-weight: 700
-  color: #112D4E
+  color: var(--color-text-main)
   margin-bottom: 0.5rem
-  text-shadow: 0.125rem 0.125rem 0.25rem rgba(17, 45, 78, 0.1)
+  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5)
 
 .profession
-  font-size: 1.8rem
+  font-size: clamp(1.4rem, 2.5vw, 4rem)
   font-weight: 500
-  color: #3F72AF
+  color: var(--color-text-muted)
   margin: 0
 
 .social-links
@@ -65,11 +68,12 @@
 .styleIcon
   width: 2.5rem
   height: 2.5rem
-  filter: drop-shadow(0 0.125rem 0.25rem rgba(17, 45, 78, 0.2))
+  filter: drop-shadow(0 0.125rem 0.25rem rgba(var(--color-bg-body-rgb), 0.3))
 
 .about-section
   min-height: 100vh
-  background: linear-gradient(135deg, #DBE2EF 0%, #3F72AF 100%)
+  scroll-snap-align: start
+  background: var(--color-bg-surface)
   display: flex
   align-items: center
   justify-content: center
@@ -77,14 +81,14 @@
 
 .about-content
   text-align: center
-  max-width: 50rem
+  max-width: 90vw
   margin: 0 auto
   padding: 0 2rem
 
 .about-title
-  font-size: 3rem
+  font-size: clamp(2.5rem, 5vw, 8rem)
   font-weight: 700
-  color: #112D4E
+  color: var(--color-text-main)
   margin-bottom: 2rem
   position: relative
   
@@ -96,16 +100,16 @@
     transform: translateX(-50%)
     width: 6.25rem
     height: 0.25rem
-    background: linear-gradient(90deg, #112D4E, #3F72AF)
+    background: var(--color-accent)
     border-radius: 0.125rem
 
 .about-text
-  font-size: 1.2rem
+  font-size: clamp(1rem, 1.5vw, 3rem)
   font-weight: 500
-  color: #112D4E
+  color: var(--color-text-main)
   line-height: 1.8
   text-align: justify
-  max-width: 37.5rem
+  max-width: 80vw
   margin: 0 auto
 
 .scroll-indicator
@@ -114,7 +118,7 @@
   left: 50%
   transform: translateX(-50%)
   text-align: center
-  color: #3F72AF
+  color: var(--color-text-muted)
   animation: bounce 2s infinite
 
 .scroll-arrow
@@ -122,12 +126,12 @@
   height: 0
   border-left: 0.625rem solid transparent
   border-right: 0.625rem solid transparent
-  border-top: 0.9375rem solid #3F72AF
+  border-top: 0.9375rem solid var(--color-accent)
   margin: 0 auto 0.625rem
   animation: arrow-bounce 2s infinite
 
 .scroll-text
-  font-size: 0.9rem
+  font-size: clamp(0.9rem, 1vw, 2rem)
   font-weight: 500
   text-transform: uppercase
   letter-spacing: 0.0625rem
@@ -150,17 +154,7 @@
 
 // Responsive design
 @media (max-width: 768px)
-  .name
-    font-size: 2.5rem
-  
-  .profession
-    font-size: 1.4rem
-  
-  .about-title
-    font-size: 2.5rem
-  
-  .about-text
-    font-size: 1rem
+
   
   .profile-image
     width: 9.375rem
@@ -175,90 +169,39 @@
 
 // High-resolution displays
 @media (min-width: 1920px)
-  .hero-content
-    max-width: 60rem
-  
-  .about-content
-    max-width: 60rem
+
   
   .profile-image
     width: 15rem
     height: 15rem
   
-  .name
-    font-size: 4rem
-  
-  .profession
-    font-size: 2rem
-  
-  .about-title
-    font-size: 3.5rem
-  
-  .about-text
-    font-size: 1.4rem
-  
-  .scroll-text
-    font-size: 1rem
+
   
   .styleIcon
     width: 2.8rem
     height: 2.8rem
 
 @media (min-width: 2560px)
-  .hero-content
-    max-width: 70rem
-  
-  .about-content
-    max-width: 70rem
+
   
   .profile-image
     width: 18rem
     height: 18rem
   
-  .name
-    font-size: 4.5rem
-  
-  .profession
-    font-size: 2.2rem
-  
-  .about-title
-    font-size: 4rem
-  
-  .about-text
-    font-size: 1.6rem
-  
-  .scroll-text
-    font-size: 1.1rem
+
   
   .styleIcon
     width: 3.1rem
     height: 3.1rem
 
 @media (min-width: 3840px)
-  .hero-content
-    max-width: 80rem
-  
-  .about-content
-    max-width: 80rem
+
   
   .profile-image
     width: 22rem
     height: 22rem
   
-  .name
-    font-size: 5rem
-  
-  .profession
-    font-size: 2.5rem
-  
-  .about-title
-    font-size: 4.5rem
-  
-  .about-text
-    font-size: 1.8rem
-  
-  .scroll-text
-    font-size: 1.2rem
+
   
   .styleIcon
     width: 3.5rem

@@ -4,7 +4,7 @@
       <h2 class="section-title">Mis Proyectos</h2>
       <p class="section-subtitle">Explora mi trabajo y las tecnologías que he utilizado</p>
     </div>
-    
+
     <div class="projects-grid">
       <div class="project-card" *ngFor="let proyecto of proyectos" (click)="abrirProyecto(proyecto)">
         <div class="project-icon">
@@ -18,7 +18,7 @@
           </div>
         </div>
         <div class="project-overlay">
-          <span class="ver-proyecto">Ver Proyecto</span>
+          <span class="ver-proyecto">{{ proyecto.id === 1 ? 'Este proyecto' : 'Ver Proyecto' }}</span>
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 .proyectos-section
   min-height: 100vh
-  background: linear-gradient(135deg, #F9F7F7 0%, #DBE2EF 100%)
+  scroll-snap-align: start
+  background: var(--color-bg-body)
   padding: 4rem 0
   display: flex
   align-items: center
@@ -12,7 +13,7 @@
 .section-title
   font-size: 3rem
   font-weight: 700
-  color: #112D4E
+  color: var(--color-text-main)
   margin-bottom: 1rem
   position: relative
   
@@ -24,12 +25,12 @@
     transform: translateX(-50%)
     width: 5rem
     height: 0.25rem
-    background: linear-gradient(90deg, #3F72AF, #112D4E)
+    background: var(--color-accent)
     border-radius: 0.125rem
 
 .section-subtitle
   font-size: 1.2rem
-  color: #3F72AF
+  color: var(--color-text-muted)
   font-weight: 500
 
 .projects-grid
@@ -39,10 +40,10 @@
   margin-top: 2rem
 
 .project-card
-  background: white
+  background: var(--color-bg-surface)
   border-radius: 1.25rem
   padding: 2rem
-  box-shadow: 0 0.625rem 1.875rem rgba(17, 45, 78, 0.1)
+  box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3)
   transition: all 0.3s ease
   cursor: pointer
   position: relative
@@ -50,7 +51,7 @@
   
   &:hover
     transform: translateY(-0.625rem)
-    box-shadow: 0 1.25rem 2.5rem rgba(17, 45, 78, 0.2)
+    box-shadow: 0 1.25rem 2.5rem rgba(0, 0, 0, 0.4)
     
     .project-overlay
       opacity: 1
@@ -60,7 +61,7 @@
   width: 5rem
   height: 5rem
   margin: 0 auto 1.5rem
-  background: linear-gradient(135deg, #DBE2EF, #3F72AF)
+  background: rgba(var(--color-bg-body-rgb), 0.5)
   border-radius: 1.25rem
   display: flex
   align-items: center
@@ -77,11 +78,11 @@
 .project-title
   font-size: 1.5rem
   font-weight: 700
-  color: #112D4E
+  color: var(--color-text-main)
   margin-bottom: 1rem
 
 .project-description
-  color: #3F72AF
+  color: var(--color-text-muted)
   line-height: 1.6
   margin-bottom: 1.5rem
   font-size: 0.95rem
@@ -93,8 +94,8 @@
   justify-content: center
 
 .tech-tag
-  background: linear-gradient(135deg, #DBE2EF, #3F72AF)
-  color: #112D4E
+  background: linear-gradient(135deg, var(--color-brand-teal), var(--color-brand-blue))
+  color: var(--color-text-main)
   padding: 0.3rem 0.8rem
   border-radius: 0.9375rem
   font-size: 0.8rem
@@ -110,7 +111,7 @@
   left: 0
   right: 0
   bottom: 0
-  background: linear-gradient(135deg, rgba(17, 45, 78, 0.9), rgba(63, 114, 175, 0.9))
+  background: linear-gradient(135deg, rgba(var(--color-bg-body-rgb), 0.95), rgba(var(--color-bg-surface-rgb), 0.95))
   display: flex
   align-items: center
   justify-content: center
