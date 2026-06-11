@@ -1,8 +1,10 @@
 .proyectos-section
-  min-height: 100vh
+  height: 100vh
+  box-sizing: border-box
+  overflow: hidden
   scroll-snap-align: start
   background: var(--color-bg-body)
-  padding: 4rem 0
+  padding: clamp(1.5rem, 4vh, 4rem) 0
   display: flex
   align-items: center
 
@@ -14,13 +16,13 @@
 
 .section-header
   text-align: center
-  margin-bottom: 3rem
+  margin-bottom: clamp(1rem, 2.5vh, 3rem)
 
 .section-title
-  font-size: 3rem
+  font-size: clamp(1.8rem, 4vh, 3rem)
   font-weight: 700
   color: var(--color-text-main)
-  margin-bottom: 1rem
+  margin-bottom: clamp(0.5rem, 1vh, 1rem)
   position: relative
 
   &::after
@@ -41,14 +43,14 @@
 
 .projects-grid
   display: grid
-  grid-template-columns: repeat(auto-fit, minmax(18.75rem, 1fr))
-  gap: 2rem
-  margin-top: 2rem
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr))
+  gap: clamp(1rem, 2vh, 2rem)
+  margin-top: clamp(0.5rem, 1.5vh, 2rem)
 
 .project-card
   background: var(--color-bg-surface)
   border-radius: 1.25rem
-  padding: 2rem
+  padding: clamp(1rem, 2vh, 2rem)
   box-shadow: 0 0.625rem 1.875rem rgba(0, 0, 0, 0.3)
   transition: all 0.3s ease
   cursor: pointer
@@ -135,15 +137,18 @@
 
 // Responsive design
 @media (max-width: 768px)
+  .proyectos-section
+    height: auto
+    min-height: 100vh
+    overflow-y: auto
+    padding: 2rem 0
+
   .projects-grid
     grid-template-columns: 1fr
     gap: 1.5rem
 
   .section-title
     font-size: 2.5rem
-
-  .proyectos-section
-    padding: 2rem 0
 
 // High-resolution displays
 @media (min-width: 1920px)

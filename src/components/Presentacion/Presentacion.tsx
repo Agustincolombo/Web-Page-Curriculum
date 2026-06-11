@@ -60,10 +60,7 @@ export function Presentacion() {
         </div>
       </section>
 
-      <div className={s['scroll-indicator']}>
-        <div className={s['scroll-arrow']}></div>
-        <span className={s['scroll-text']}>Desliza para ver mis proyectos</span>
-      </div>
+
     </div>
   )
 }
