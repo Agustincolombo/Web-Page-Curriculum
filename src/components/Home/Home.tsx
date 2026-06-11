@@ -1,4 +1,5 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
+import { useFullPageScroll } from '../../hooks/useFullPageScroll'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import { Presentacion } from '../Presentacion/Presentacion'
 import { Proyectos } from '../Proyectos/Proyectos'
@@ -8,13 +9,20 @@ const sectionIds = ['inicio', 'sobre-mi', 'proyectos']
 
 export function Home() {
   const activeIndex = useScrollSpy(sectionIds)
+  useFullPageScroll(sectionIds)
+
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    containerRef.current?.focus()
+  }, [])
 
   const scrollToSection = useCallback((id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
   }, [])
 
   return (
-    <div className={s['main-container']}>
+    <div ref={containerRef} className={s['main-container']} tabIndex={-1} style={{ outline: 'none' }}>
       <nav className="navigation-dots">
         {sectionIds.map((id, i) => (
           <button
