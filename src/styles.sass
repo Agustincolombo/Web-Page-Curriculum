@@ -6,79 +6,42 @@ html
   overflow-x: hidden
   margin: 0
   padding: 0
-  
+
   // Scaling for high-resolution displays
   @media (min-width: 1920px)
     font-size: 18px
-  
+
   @media (min-width: 2560px)
     font-size: 20px
-  
+
   @media (min-width: 3840px)
     font-size: 24px
 
-* 
+*
   font-family: "Montserrat", sans-serif
   font-optical-sizing: auto
   font-weight: 400
   font-style: normal
 
-/* Paleta de colores Original */
-// $color-navy: #112D4E
-// $color-blue: #3F72AF
-// $color-gray: #DBE2EF
-// $color-white: #F9F7F7
-
-/* Paleta Nueva (Dark Mode Theme) */
-$color-brand-red: #BF092F
-$color-brand-navy: #132440
-$color-brand-blue: #16476A
-$color-brand-teal: #3B9797
-$color-basic-white: #FFFFFF
-$color-basic-gray: #E0E0E0
-
-// Functional Mapping (Proposito General)
-$color-bg-body: $color-brand-navy
-$color-bg-surface: $color-brand-blue
-$color-text-main: $color-basic-white
-$color-text-muted: $color-brand-teal
-$color-accent: $color-brand-teal // Cambiado de Red a Teal. Red sigue disponible en $color-brand-red
+/* Paleta — Apple Gray */
+$color-bg-body: #F5F5F7
+$color-bg-surface: #FFFFFF
+$color-text-main: #1D1D1F
+$color-text-muted: #6E6E73
+$color-accent: #1B4FD8
+$color-border: #D2D2D7
 
 :root
-  // Semantic Variables (Standardized)
   --color-bg-body: #{$color-bg-body}
   --color-bg-surface: #{$color-bg-surface}
   --color-text-main: #{$color-text-main}
   --color-text-muted: #{$color-text-muted}
   --color-accent: #{$color-accent}
-  --color-brand-red: #{$color-brand-red}
-  --color-brand-navy: #{$color-brand-navy}
-  --color-brand-blue: #{$color-brand-blue}
-  --color-brand-teal: #{$color-brand-teal}
-  
-  // RGB Helpers for Opacity — hardcoded to avoid deprecated SASS color functions
-  --color-bg-body-rgb: 19, 36, 64
-  --color-bg-surface-rgb: 22, 71, 106
-  --color-accent-rgb: 59, 151, 151
-  --color-brand-teal-rgb: 59, 151, 151
+  --color-border: #{$color-border}
 
-// Legacy Support / Direct Mapping (Optional but useful for rapid transition)
-$color-navy: $color-brand-navy
-$color-blue: $color-brand-blue
-$color-gray: $color-brand-teal
-$color-white: $color-basic-white
-
-.bg-navy
-  background-color: $color-navy
-  
-.bg-blue
-  background-color: $color-blue
-
-.bg-gray
-  background-color: $color-gray
-
-.bg-white
-  background-color: $color-white
+  // RGB Helpers for Opacity
+  --color-bg-body-rgb: 245, 245, 247
+  --color-accent-rgb: 27, 79, 216
 
 body
   width: 100%
@@ -87,6 +50,7 @@ body
   margin: 0
   padding: 0
   background-color: var(--color-bg-body)
+  color: var(--color-text-main)
 
 .main-container
   width: 100%
@@ -104,79 +68,49 @@ body
   gap: 0.9375rem
 
 .nav-dot
-  width: 1rem
-  height: 1rem
+  width: 0.5rem
+  height: 0.5rem
   border-radius: 50%
-  background: transparent
+  background: var(--color-border)
   cursor: pointer
-  transition: all 0.3s ease
-  border: 0.125rem solid var(--color-text-muted)
-  box-shadow: 0 0 5px rgba(0,0,0,0.5)
-  
+  transition: all 0.25s ease
+  border: none
+  padding: 0
+
   &:hover
-    background: rgba(var(--color-brand-teal-rgb), 0.3)
+    background: var(--color-text-muted)
     transform: scale(1.2)
-    border-color: var(--color-accent)
-  
+
   &.active
-    background: var(--color-brand-teal)
-    border-color: var(--color-text-main)
+    background: var(--color-text-main)
     transform: scale(1.3)
-    box-shadow: 0 0 0.625rem rgba(var(--color-brand-teal-rgb), 0.5)
 
 // Custom scrollbar
 ::-webkit-scrollbar
-  width: 0.5rem
+  width: 0.25rem
 
 ::-webkit-scrollbar-track
   background: var(--color-bg-body)
 
 ::-webkit-scrollbar-thumb
-  background: linear-gradient(135deg, var(--color-brand-teal), var(--color-brand-blue))
+  background: var(--color-border)
   border-radius: 0.25rem
-  
+
   &:hover
-    background: linear-gradient(135deg, var(--color-brand-blue), var(--color-brand-teal))
+    background: var(--color-text-muted)
 
 // High-resolution displays adjustments
 @media (min-width: 1920px)
   .navigation-dots
     right: 2.5rem
     gap: 1.25rem
-  
-  .nav-dot
-    width: 1rem
-    height: 1rem
-    border-width: 0.1875rem
-  
-  // Scrollbar scaling
-  ::-webkit-scrollbar
-    width: 0.6rem
 
 @media (min-width: 2560px)
   .navigation-dots
     right: 3rem
     gap: 1.5rem
-  
-  .nav-dot
-    width: 1.25rem
-    height: 1.25rem
-    border-width: 0.25rem
-  
-  // Scrollbar scaling
-  ::-webkit-scrollbar
-    width: 0.7rem
 
 @media (min-width: 3840px)
   .navigation-dots
     right: 3.5rem
     gap: 1.75rem
-  
-  .nav-dot
-    width: 1.5rem
-    height: 1.5rem
-    border-width: 0.3125rem
-  
-  // Scrollbar scaling
-  ::-webkit-scrollbar
-    width: 0.8rem
