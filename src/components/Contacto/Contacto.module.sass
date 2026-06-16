@@ -1,0 +1,98 @@
+.contacto-section
+  height: 100vh
+  box-sizing: border-box
+  scroll-snap-align: start
+  background: var(--color-bg-surface)
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 0 5vw
+  position: relative
+
+.container
+  max-width: 560px
+  width: 100%
+  text-align: center
+
+.eyebrow
+  font-size: 0.8125rem
+  font-weight: 500
+  color: var(--color-text-muted)
+  letter-spacing: 0.08em
+  text-transform: uppercase
+  margin: 0 0 1rem 0
+
+.title
+  font-size: clamp(2rem, 4vw, 3.5rem)
+  font-weight: 800
+  color: var(--color-text-main)
+  margin: 0 0 1.25rem 0
+  line-height: 1.1
+  letter-spacing: -0.025em
+
+.divider
+  width: 2.5rem
+  height: 2px
+  background-color: var(--color-text-main)
+  margin: 0 auto 1.25rem auto
+
+.description
+  font-size: 1rem
+  color: var(--color-text-muted)
+  line-height: 1.7
+  margin: 0 0 2.5rem 0
+
+.email-button
+  display: inline-block
+  font-size: 0.9rem
+  font-weight: 500
+  color: var(--color-text-main)
+  text-decoration: none
+  letter-spacing: 0.02em
+  border: 1.5px solid var(--color-text-main)
+  padding: 0.75rem 1.75rem
+  border-radius: 980px
+  transition: background-color 0.2s ease, color 0.2s ease
+  margin-bottom: 2.5rem
+
+  &:hover
+    background-color: var(--color-text-main)
+    color: var(--color-bg-surface)
+
+.social-links
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 0.75rem
+
+.social-link
+  font-size: 0.8125rem
+  font-weight: 600
+  color: var(--color-text-main)
+  text-decoration: none
+  letter-spacing: 0.06em
+  transition: color 0.2s ease
+
+  &:hover
+    color: var(--color-accent)
+
+.dot
+  color: var(--color-border)
+  font-size: 0.75rem
+
+.footer
+  position: absolute
+  bottom: 1.75rem
+  font-size: 0.75rem
+  color: var(--color-text-muted)
+  letter-spacing: 0.04em
+
+@media (max-width: 768px)
+  .contacto-section
+    padding: 0 1.5rem
+    justify-content: center
+
+  .email-button
+    font-size: 0.8125rem
+    padding: 0.625rem 1.25rem
