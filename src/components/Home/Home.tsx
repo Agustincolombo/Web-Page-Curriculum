@@ -3,9 +3,10 @@ import { useFullPageScroll } from '../../hooks/useFullPageScroll'
 import { useScrollSpy } from '../../hooks/useScrollSpy'
 import { Presentacion } from '../Presentacion/Presentacion'
 import { Proyectos } from '../Proyectos/Proyectos'
+import { Contacto } from '../Contacto/Contacto'
 import s from './Home.module.sass'
 
-const sectionIds = ['inicio', 'proyectos']
+const sectionIds = ['inicio', 'proyectos', 'contacto']
 
 export function Home() {
   const activeIndex = useScrollSpy(sectionIds)
@@ -48,6 +49,7 @@ export function Home() {
 
       <Presentacion onNavigate={scrollToSection} />
       <Proyectos />
+      <Contacto />
     </div>
   )
 }
