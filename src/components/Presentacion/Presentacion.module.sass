@@ -1,162 +1,198 @@
 .presentacion-container
-  min-height: 100vh
   position: relative
-  background: linear-gradient(135deg, var(--color-bg-body) 0%, var(--color-bg-surface) 50%, var(--color-bg-body) 100%)
 
 .hero-section
   height: 100vh
   box-sizing: border-box
-  overflow: hidden
   scroll-snap-align: start
+  background: radial-gradient(ellipse at 60% 50%, #FFFFFF 0%, #F5F5F7 65%)
   display: flex
   align-items: center
-  justify-content: center
-  padding: 2rem 0
-  background-color: var(--color-bg-body)
-
-.hero-content
-  text-align: center
-  max-width: 90vw
-  margin: 0 auto
-  padding: 0 2rem
-
-.profile-image-container
-  margin-bottom: clamp(0.75rem, 2vh, 2rem)
-
-.profile-image
-  width: clamp(7rem, 14vh, 12.5rem)
-  height: clamp(7rem, 14vh, 12.5rem)
-  border-radius: 50%
-  object-fit: cover
-  border: 0.25rem solid var(--color-brand-teal)
-  box-shadow: 0 0.625rem 1.875rem rgba(var(--color-bg-body-rgb), 0.4)
-  transition: transform 0.3s ease
-
-  &:hover
-    transform: scale(1.05)
-
-.name-section
-  margin-bottom: clamp(0.75rem, 2vh, 2rem)
-
-.name
-  font-size: clamp(2.5rem, 5vw, 8rem)
-  font-weight: 700
-  color: var(--color-text-main)
-  margin-bottom: 0.5rem
-  text-shadow: 0.125rem 0.125rem 0.25rem rgba(0, 0, 0, 0.5)
-
-.profession
-  font-size: clamp(1.4rem, 2.5vw, 4rem)
-  font-weight: 500
-  color: var(--color-text-muted)
-  margin: 0
-
-.social-links
-  margin-bottom: clamp(0.5rem, 1.5vh, 3rem)
-
-.social-icons
-  display: flex
-  justify-content: center
-  gap: 2rem
-
-.social-icon
-  display: inline-block
-  transition: transform 0.3s ease
-
-  &:hover
-    transform: scale(1.1)
-
-.styleIcon
-  width: 2.5rem
-  height: 2.5rem
-  filter: drop-shadow(0 0.125rem 0.25rem rgba(var(--color-bg-body-rgb), 0.3))
-
-.about-section
-  height: 100vh
-  box-sizing: border-box
+  padding: 0 5vw
   overflow: hidden
-  scroll-snap-align: start
-  background: var(--color-bg-surface)
-  display: flex
-  align-items: center
-  justify-content: center
-  padding: clamp(1.5rem, 4vh, 4rem) 0
-
-.about-content
-  text-align: center
-  max-width: 90vw
-  margin: 0 auto
-  padding: 0 2rem
-
-.about-title
-  font-size: clamp(2rem, 5vw, 6rem)
-  font-weight: 700
-  color: var(--color-text-main)
-  margin-bottom: clamp(1rem, 3vh, 2rem)
   position: relative
 
-  &::after
-    content: ''
-    position: absolute
-    bottom: -0.625rem
-    left: 50%
-    transform: translateX(-50%)
-    width: 6.25rem
-    height: 0.25rem
-    background: var(--color-accent)
-    border-radius: 0.125rem
+// Navigation — absolute so it doesn't affect vertical centering
+.hero-nav
+  display: flex
+  align-items: center
+  justify-content: space-between
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  padding: 0.875rem 5vw
+  z-index: 10
+  background-color: rgba(245, 245, 247, 0.85)
+  backdrop-filter: saturate(180%) blur(20px)
+  -webkit-backdrop-filter: saturate(180%) blur(20px)
 
-.about-text
-  font-size: clamp(1rem, 1.5vw, 3rem)
+.nav-links
+  display: flex
+  align-items: center
+  gap: 1rem
+
+  button
+    font-size: 0.8125rem
+    font-weight: 500
+    color: var(--color-text-muted)
+    letter-spacing: 0.04em
+    transition: color 0.2s ease
+    background: none
+    border: none
+    padding: 0
+    cursor: pointer
+    font-family: inherit
+
+    &:hover
+      color: var(--color-text-main)
+
+  span
+    color: var(--color-border)
+    font-size: 0.75rem
+
+.cv-button
+  font-size: 0.8125rem
   font-weight: 500
   color: var(--color-text-main)
-  line-height: 1.8
-  text-align: justify
-  max-width: 80vw
-  margin: 0 auto
+  text-decoration: none
+  letter-spacing: 0.02em
+  border: 1.5px solid var(--color-text-main)
+  padding: 0.5rem 1.25rem
+  border-radius: 980px
+  transition: background-color 0.2s ease, color 0.2s ease
 
+  &:hover
+    background-color: var(--color-text-main)
+    color: #FFFFFF
 
-// Responsive design
+// Hero layout — asymmetric split 45/55
+.hero-content
+  width: 100%
+  display: flex
+  align-items: center
+
+.hero-left
+  width: 45%
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-shrink: 0
+
+.profile-image-container
+  position: relative
+
+.profile-image
+  width: clamp(14rem, 24vw, 22rem)
+  height: clamp(14rem, 24vw, 22rem)
+  object-fit: cover
+  object-position: center top
+  display: block
+  border-radius: 50%
+  border: 2px solid var(--color-border)
+
+.hero-right
+  width: 55%
+  position: relative
+  display: flex
+  align-items: center
+  padding-left: 4rem
+
+// Content
+.hero-info
+  position: relative
+  z-index: 1
+  animation: heroFadeIn 0.6s ease-out both
+
+.profile-image-container
+  animation: heroFadeIn 0.6s ease-out 0.15s both
+
+.name
+  font-family: 'Montserrat', sans-serif
+  font-size: clamp(2rem, 3.5vw, 4rem)
+  font-weight: 800
+  color: var(--color-text-main)
+  margin: 0 0 1.25rem 0
+  line-height: 1.1
+  letter-spacing: -0.025em
+
+.divider
+  width: 2.5rem
+  height: 2px
+  background-color: var(--color-text-main)
+  margin-bottom: 1.25rem
+
+.profession
+  font-size: clamp(0.9rem, 1.2vw, 1.125rem)
+  font-weight: 500
+  color: var(--color-text-muted)
+  margin: 0 0 0.5rem 0
+  letter-spacing: 0.03em
+
+.tech-stack
+  font-family: 'JetBrains Mono', monospace
+  font-size: 0.75rem
+  color: var(--color-text-muted)
+  margin: 0 0 2.5rem 0
+  letter-spacing: 0.08em
+
+.social-links
+  display: flex
+  gap: 1.75rem
+
+.social-link
+  display: flex
+  align-items: center
+  gap: 0.5rem
+  font-size: 0.8125rem
+  font-weight: 600
+  color: var(--color-text-main)
+  text-decoration: none
+  letter-spacing: 0.06em
+  transition: color 0.2s ease
+
+  svg
+    flex-shrink: 0
+    transition: color 0.2s ease
+
+  &:hover
+    color: var(--color-accent)
+
+@keyframes heroFadeIn
+  from
+    opacity: 0
+    transform: translateY(16px)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+// Responsive
 @media (max-width: 768px)
+  .hero-section
+    padding: 0 1.5rem
+
+  .hero-content
+    flex-direction: column
+    justify-content: center
+    gap: 2.5rem
+
+  .hero-left
+    width: 100%
+    justify-content: center
+
+  .hero-right
+    width: 100%
+    padding-left: 0
+    justify-content: center
+    text-align: center
 
   .profile-image
-    width: 9.375rem
-    height: 9.375rem
+    width: 10rem
+    height: 10rem
 
-  .social-icons
-    gap: 1.5rem
+  .divider
+    margin-left: auto
+    margin-right: auto
 
-  .styleIcon
-    width: 2rem
-    height: 2rem
-
-// High-resolution displays
-@media (min-width: 1920px)
-
-  .profile-image
-    width: 15rem
-    height: 15rem
-
-  .styleIcon
-    width: 2.8rem
-    height: 2.8rem
-
-@media (min-width: 2560px)
-
-  .profile-image
-    width: 18rem
-    height: 18rem
-
-  .styleIcon
-    width: 3.1rem
-    height: 3.1rem
-
-@media (min-width: 3840px)
-
-  .profile-image
-    width: 22rem
-    height: 22rem
-
-  .styleIcon
-    width: 3.5rem
-    height: 3.5rem
+  .social-links
+    justify-content: center
