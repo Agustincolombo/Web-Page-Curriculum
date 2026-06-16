@@ -5,7 +5,7 @@ import { Presentacion } from '../Presentacion/Presentacion'
 import { Proyectos } from '../Proyectos/Proyectos'
 import s from './Home.module.sass'
 
-const sectionIds = ['inicio', 'sobre-mi', 'proyectos']
+const sectionIds = ['inicio', 'proyectos']
 
 export function Home() {
   const activeIndex = useScrollSpy(sectionIds)
@@ -18,7 +18,19 @@ export function Home() {
   }, [])
 
   const scrollToSection = useCallback((id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    const el = document.getElementById(id)
+    if (!el) return
+    const from = window.scrollY
+    const to = from + el.getBoundingClientRect().top
+    const duration = 400
+    const ease = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t)
+    const start = performance.now()
+    const tick = (now: number) => {
+      const progress = Math.min((now - start) / duration, 1)
+      window.scrollTo(0, from + (to - from) * ease(progress))
+      if (progress < 1) requestAnimationFrame(tick)
+    }
+    requestAnimationFrame(tick)
   }, [])
 
   return (
@@ -34,7 +46,7 @@ export function Home() {
         ))}
       </nav>
 
-      <Presentacion />
+      <Presentacion onNavigate={scrollToSection} />
       <Proyectos />
     </div>
   )

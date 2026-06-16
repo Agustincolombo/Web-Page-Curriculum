@@ -9,8 +9,8 @@ export function useFullPageScroll(sectionIds: string[]) {
     const clamp = (n: number) =>
       Math.max(0, Math.min(n, sectionIds.length - 1));
 
-    const DURATION = 275;
-    const ease = (t: number) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
+    const DURATION = 400;
+    const ease = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
 
     const scrollTo = (index: number) => {
       const el = document.getElementById(sectionIds[index]);
