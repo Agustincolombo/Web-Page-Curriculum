@@ -36,6 +36,6 @@ describe('Home', () => {
 
   it('renders Proyectos section', () => {
     renderHome()
-    expect(screen.getByText('Mis Proyectos')).toBeInTheDocument()
+    expect(screen.getByRole('heading', { name: 'Proyectos' })).toBeInTheDocument()
   })
 })
