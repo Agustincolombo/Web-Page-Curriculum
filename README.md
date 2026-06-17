@@ -9,7 +9,7 @@ El proyecto consiste en una aplicación web moderna que sirve como carta de pres
 ## Características
 
 - **Diseño Responsivo**: Interfaz totalmente adaptable que garantiza una visualización óptima en dispositivos móviles, tablets y monitores de alta resolución (hasta 8K).
-- **Estilo Personalizado**: Sistema de diseño propio con paleta de colores coherente y tipografía Montserrat, gestionado mediante variables CSS y SASS.
+- **Estilo Personalizado**: Sistema de diseño inspirado en Apple, con paleta de colores coherente y tipografías Montserrat, Source Serif 4 y JetBrains Mono, gestionado mediante variables CSS y SASS.
 - **Arquitectura Modular**: Componentes React con CSS Modules para encapsulamiento de estilos y separación de responsabilidades.
 - **Navegación Intuitiva**: Scroll snapping por secciones con dots de navegación fijos que reflejan la sección activa en tiempo real.
 - **Scroll Spy**: Hook personalizado `useScrollSpy` que detecta la sección visible y actualiza la navegación sin dependencias externas.
@@ -21,7 +21,7 @@ El proyecto consiste en una aplicación web moderna que sirve como carta de pres
 - **Lenguaje**: TypeScript ~5.5
 - **Routing**: React Router DOM v6
 - **Estilos**: SASS (.sass), CSS Modules, CSS Variables
-- **Fuentes**: Google Fonts (Montserrat)
+- **Fuentes**: Google Fonts (Montserrat, Source Serif 4, JetBrains Mono)
 - **Testing**: Vitest + Testing Library (React)
 - **Control de Versiones**: Git
 - **Despliegue**: Vercel
@@ -34,6 +34,7 @@ src/
 │   ├── Home/           # Contenedor principal (scroll spy + nav dots)
 │   ├── Presentacion/   # Sección hero con datos personales
 │   ├── Proyectos/      # Grid de proyectos
+│   ├── Contacto/       # Sección de contacto
 │   └── NotFound/       # Página 404
 ├── data/               # Datos estáticos (proyectos)
 ├── hooks/              # Hooks personalizados (useScrollSpy)
