@@ -19,7 +19,7 @@ export function Contacto() {
         </a>
         <div className={s['social-links']}>
           <a
-            href="https://www.linkedin.com/in/agustín-colombo"
+            href="https://www.linkedin.com/in/agustin-colombo-dev/"
             target="_blank"
             rel="noopener noreferrer"
             className={s['social-link']}

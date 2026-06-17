@@ -6,6 +6,6 @@ export const personalData = {
     siempre enfocado en el crecimiento como profesional y la aplicación práctica de todo lo aprendido a lo largo de mi carrera.
     Me encantan los desafíos y siempre doy lo mejor de mí para poder ofrecer las mejores soluciones.
     Valoro mucho el trabajo en equipo y lo que aporta en mi formación.`,
-  linkedinUrl: 'https://www.linkedin.com/in/agustín-colombo',
+  linkedinUrl: 'https://www.linkedin.com/in/agustin-colombo-dev/',
   githubUrl: 'https://github.com/Agustincolombo',
 }
