@@ -1,16 +1,6 @@
 import { projects } from '../../data/projects.data'
 import s from './Proyectos.module.sass'
 
-function ExternalLinkIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-      <polyline points="15 3 21 3 21 9" />
-      <line x1="10" y1="14" x2="21" y2="3" />
-    </svg>
-  )
-}
-
 function GitHubIcon() {
   return (
     <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -31,33 +21,28 @@ export function Proyectos() {
 
         <div className={s['projects-grid']}>
           {projects.map((project) => (
-            <div key={project.id} className={s['project-card']}>
+            <a
+              key={project.id}
+              href={project.demoUrl ?? project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={s['project-card']}
+              aria-label={`Ver demo de ${project.name}`}
+            >
               <div className={s['card-header']}>
                 <h3 className={s['project-title']}>{project.name}</h3>
-                <div className={s['card-links']}>
-                  {project.demoUrl && (
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={s['card-link']}
-                      aria-label={`Demo de ${project.name}`}
-                    >
-                      <ExternalLinkIcon />
-                    </a>
-                  )}
-                  {project.repoUrl && (
-                    <a
-                      href={project.repoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={s['card-link']}
-                      aria-label={`Repositorio de ${project.name}`}
-                    >
-                      <GitHubIcon />
-                    </a>
-                  )}
-                </div>
+                {project.repoUrl && (
+                  <a
+                    href={project.repoUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={s['card-link']}
+                    aria-label={`Repositorio de ${project.name}`}
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <GitHubIcon />
+                  </a>
+                )}
               </div>
 
               <p className={s['project-description']}>{project.description}</p>
@@ -67,7 +52,7 @@ export function Proyectos() {
                   <span key={tech} className={s['tech-tag']}>{tech}</span>
                 ))}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
