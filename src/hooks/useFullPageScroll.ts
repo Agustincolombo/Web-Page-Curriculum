@@ -1,5 +1,7 @@
 import { useEffect, useRef } from "react";
 
+const MOBILE_BREAKPOINT = 768;
+
 export function useFullPageScroll(sectionIds: string[]) {
   const isScrolling = useRef(false);
   const targetIndex = useRef(0);
@@ -11,6 +13,8 @@ export function useFullPageScroll(sectionIds: string[]) {
 
     const DURATION = 400;
     const ease = (t: number) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+    const isMobile = () => window.innerWidth <= MOBILE_BREAKPOINT;
 
     const scrollTo = (index: number) => {
       const el = document.getElementById(sectionIds[index]);
@@ -52,6 +56,7 @@ export function useFullPageScroll(sectionIds: string[]) {
     };
 
     const handleWheel = (e: WheelEvent) => {
+      if (isMobile()) return;
       e.preventDefault();
       if (isScrolling.current) return;
       targetIndex.current = getCurrentIndex();
@@ -59,6 +64,7 @@ export function useFullPageScroll(sectionIds: string[]) {
     };
 
     const handleKeyDown = (e: KeyboardEvent) => {
+      if (isMobile()) return;
       if (e.key === "ArrowDown" || e.key === "PageDown") {
         e.preventDefault();
         navigate(1);
@@ -70,11 +76,13 @@ export function useFullPageScroll(sectionIds: string[]) {
     };
 
     const handleTouchStart = (e: TouchEvent) => {
-      e.preventDefault();
       touchStartY.current = e.touches[0].clientY;
+      if (isMobile()) return;
+      e.preventDefault();
     };
 
     const handleTouchEnd = (e: TouchEvent) => {
+      if (isMobile()) return;
       const diff = touchStartY.current - e.changedTouches[0].clientY;
       if (Math.abs(diff) < 50) return;
       if (isScrolling.current) return;
