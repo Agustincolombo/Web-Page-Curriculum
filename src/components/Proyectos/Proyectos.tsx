@@ -14,8 +14,8 @@ export function Proyectos() {
     <section id="proyectos" className={s['proyectos-section']}>
       <div className={s.container}>
         <div className={s['section-header']}>
-          <p className={s.eyebrow}>Lo que construí</p>
-          <h2 className={s['section-title']}>Proyectos</h2>
+          <p className={s.eyebrow}>What I've built</p>
+          <h2 className={s['section-title']}>Projects</h2>
           <div className={s.divider} />
         </div>
 
@@ -27,7 +27,7 @@ export function Proyectos() {
               target="_blank"
               rel="noopener noreferrer"
               className={s['project-card']}
-              aria-label={`Ver demo de ${project.name}`}
+              aria-label={`View ${project.name} demo`}
             >
               <div className={s['card-header']}>
                 <h3 className={s['project-title']}>{project.name}</h3>
@@ -37,7 +37,7 @@ export function Proyectos() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={s['card-link']}
-                    aria-label={`Repositorio de ${project.name}`}
+                    aria-label={`${project.name} repository`}
                     onClick={(e) => e.stopPropagation()}
                   >
                     <GitHubIcon />

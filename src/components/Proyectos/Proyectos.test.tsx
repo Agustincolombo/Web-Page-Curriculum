@@ -21,7 +21,7 @@ describe('Proyectos', () => {
   it('renders demo links for projects that have demoUrl', () => {
     const demoProjects = projects.filter((p) => p.demoUrl)
     const demoLinks = screen.getAllByRole('link').filter((l) =>
-      l.getAttribute('aria-label')?.startsWith('Demo de')
+      l.getAttribute('aria-label')?.includes('demo')
     )
     expect(demoLinks).toHaveLength(demoProjects.length)
   })
@@ -29,7 +29,7 @@ describe('Proyectos', () => {
   it('renders repo links for projects that have repoUrl', () => {
     const repoProjects = projects.filter((p) => p.repoUrl)
     const repoLinks = screen.getAllByRole('link').filter((l) =>
-      l.getAttribute('aria-label')?.startsWith('Repositorio de')
+      l.getAttribute('aria-label')?.endsWith('repository')
     )
     expect(repoLinks).toHaveLength(repoProjects.length)
   })

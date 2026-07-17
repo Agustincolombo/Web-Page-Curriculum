@@ -6,13 +6,13 @@ export function Contacto() {
   return (
     <section id="contacto" className={s['contacto-section']}>
       <div className={s.container}>
-        <p className={s.eyebrow}>¿Qué sigue?</p>
-        <h2 className={s.title}>Hablemos</h2>
+        <p className={s.eyebrow}>What's next?</p>
+        <h2 className={s.title}>Let's talk</h2>
         <div className={s.divider} />
         <p className={s.description}>
-          Estoy abierto a nuevas oportunidades y colaboraciones. Si tenés un
-          proyecto en mente, una propuesta o simplemente querés ponerte en
-          contacto — escribime, te respondo a la brevedad.
+          I'm open to new opportunities and collaborations. If you have a
+          project in mind, a proposal, or just want to get in
+          touch — reach out, I'll get back to you shortly.
         </p>
         <a href={`mailto:${EMAIL}`} className={s['email-button']}>
           {EMAIL} ↗
@@ -38,7 +38,7 @@ export function Contacto() {
         </div>
       </div>
       <footer className={s.footer}>
-        Diseñado y desarrollado por Agustín Colombo
+        Designed and built by Agustín Colombo
       </footer>
     </section>
   )

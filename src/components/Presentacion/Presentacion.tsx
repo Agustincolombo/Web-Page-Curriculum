@@ -27,12 +27,12 @@ export function Presentacion({ onNavigate }: PresentacionProps) {
       <section id="inicio" className={s['hero-section']}>
         <nav className={s['hero-nav']}>
           <div className={s['nav-links']}>
-            <button onClick={() => onNavigate('proyectos')}>Proyectos</button>
+            <button onClick={() => onNavigate('proyectos')}>Projects</button>
             <span aria-hidden="true">·</span>
-            <button onClick={() => onNavigate('contacto')}>Contacto</button>
+            <button onClick={() => onNavigate('contacto')}>Contact</button>
           </div>
           <a href="https://drive.google.com/uc?export=download&id=1QEndfJ3bTLRVVcxfWd30rEGPTsE5PtIq" target="_blank" rel="noopener noreferrer" className={s['cv-button']}>
-            Descargar CV ↓
+            Download CV ↓
           </a>
         </nav>
 

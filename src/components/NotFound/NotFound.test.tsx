@@ -18,7 +18,7 @@ describe('NotFound', () => {
 
   it('has a link to "/"', () => {
     renderNotFound()
-    const link = screen.getByRole('link', { name: /volver al inicio/i })
+    const link = screen.getByRole('link', { name: /back to home/i })
     expect(link).toBeInTheDocument()
     expect(link).toHaveAttribute('href', '/')
   })
