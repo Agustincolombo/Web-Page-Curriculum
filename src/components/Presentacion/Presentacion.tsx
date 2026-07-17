@@ -40,7 +40,7 @@ export function Presentacion({ onNavigate }: PresentacionProps) {
           <div className={s['hero-left']}>
             <div className={s['profile-image-container']}>
               <img
-                src="FotoPerfil.jpeg"
+                src="FotoPerfil.png"
                 alt={personalData.name}
                 className={s['profile-image']}
               />
