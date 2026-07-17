@@ -1,99 +1,99 @@
-# Portfolio Web - Agustín Colombo
+# Web Portfolio - Agustín Colombo
 
-Este repositorio contiene el código fuente de mi **Portafolio Personal y Currículum Web**. Es una Single Page Application (SPA) desarrollada con **React 18 + Vite**, diseñada para presentar mi experiencia profesional, habilidades técnicas y proyectos destacados de manera estructurada y responsiva.
+This repository contains the source code for my **Personal Portfolio and Web Resume**. It's a Single Page Application (SPA) built with **React 18 + Vite**, designed to present my professional experience, technical skills, and featured projects in a structured, responsive way.
 
-## Descripción
+## Description
 
-El proyecto consiste en una aplicación web moderna que sirve como carta de presentación profesional. Su objetivo es ofrecer una interfaz limpia, accesible y estéticamente agradable que refleje mis habilidades técnicas como desarrollador, permitiendo acceder fácilmente a mi información profesional y portafolio de trabajos.
+The project is a modern web application that serves as a professional showcase. Its goal is to offer a clean, accessible, and aesthetically pleasing interface that reflects my technical skills as a developer, making it easy to access my professional background and portfolio of work.
 
-## Características
+## Features
 
-- **Diseño Responsivo**: Interfaz totalmente adaptable que garantiza una visualización óptima en dispositivos móviles, tablets y monitores de alta resolución (hasta 8K).
-- **Estilo Personalizado**: Sistema de diseño inspirado en Apple, con paleta de colores coherente y tipografías Montserrat, Source Serif 4 y JetBrains Mono, gestionado mediante variables CSS y SASS.
-- **Arquitectura Modular**: Componentes React con CSS Modules para encapsulamiento de estilos y separación de responsabilidades.
-- **Navegación Intuitiva**: Scroll snapping por secciones con dots de navegación fijos que reflejan la sección activa en tiempo real.
-- **Scroll Spy**: Hook personalizado `useScrollSpy` que detecta la sección visible y actualiza la navegación sin dependencias externas.
+- **Responsive Design**: Fully adaptable interface that ensures optimal viewing on mobile devices, tablets, and high-resolution monitors (up to 8K).
+- **Custom Styling**: Apple-inspired design system with a coherent color palette and Montserrat, Source Serif 4, and JetBrains Mono typefaces, managed through CSS variables and SASS.
+- **Modular Architecture**: React components with CSS Modules for style encapsulation and separation of concerns.
+- **Intuitive Navigation**: Section-based scroll snapping with fixed navigation dots that reflect the active section in real time.
+- **Scroll Spy**: Custom `useScrollSpy` hook that detects the visible section and updates navigation with no external dependencies.
 
-## Tecnologías Utilizadas
+## Tech Stack
 
 - **UI Library**: React 18
 - **Build Tool**: Vite 5
-- **Lenguaje**: TypeScript ~5.5
+- **Language**: TypeScript ~5.5
 - **Routing**: React Router DOM v6
-- **Estilos**: SASS (.sass), CSS Modules, CSS Variables
-- **Fuentes**: Google Fonts (Montserrat, Source Serif 4, JetBrains Mono)
+- **Styling**: SASS (.sass), CSS Modules, CSS Variables
+- **Fonts**: Google Fonts (Montserrat, Source Serif 4, JetBrains Mono)
 - **Testing**: Vitest + Testing Library (React)
-- **Control de Versiones**: Git
-- **Despliegue**: Vercel
+- **Version Control**: Git
+- **Deployment**: Vercel
 
-## Estructura del Proyecto
+## Project Structure
 
 ```
 src/
-├── components/         # Componentes React por feature
-│   ├── Home/           # Contenedor principal (scroll spy + nav dots)
-│   ├── Presentacion/   # Sección hero con datos personales
-│   ├── Proyectos/      # Grid de proyectos
-│   ├── Contacto/       # Sección de contacto
-│   └── NotFound/       # Página 404
-├── data/               # Datos estáticos (proyectos)
-├── hooks/              # Hooks personalizados (useScrollSpy)
-├── models/             # Interfaces TypeScript
-├── router/             # Configuración de rutas
-├── App.tsx             # Componente raíz
+├── components/         # React components by feature
+│   ├── Home/           # Main container (scroll spy + nav dots)
+│   ├── Presentacion/   # Hero section with personal data
+│   ├── Proyectos/      # Projects grid
+│   ├── Contacto/       # Contact section
+│   └── NotFound/       # 404 page
+├── data/               # Static data (projects)
+├── hooks/              # Custom hooks (useScrollSpy)
+├── models/             # TypeScript interfaces
+├── router/             # Route configuration
+├── App.tsx             # Root component
 ├── main.tsx            # Entry point
-└── styles.sass         # Estilos globales y design tokens
+└── styles.sass         # Global styles and design tokens
 ```
 
-## Instalación y Ejecución Local
+## Local Installation and Setup
 
-1. **Clonar el repositorio**
+1. **Clone the repository**
    ```bash
    git clone https://github.com/Agustincolombo/Web-Page-Curriculum.git
    cd Web-Page-Curriculum
    ```
 
-2. **Instalar dependencias**
+2. **Install dependencies**
    ```bash
    npm install
    ```
 
-3. **Ejecutar servidor de desarrollo**
+3. **Run the development server**
    ```bash
    npm run dev
    ```
-   La aplicación estará disponible en `http://localhost:5173/`.
+   The application will be available at `http://localhost:5173/`.
 
-## Scripts Disponibles
+## Available Scripts
 
-| Comando | Descripción |
+| Command | Description |
 |---------|-------------|
-| `npm run dev` | Servidor de desarrollo con HMR |
-| `npm run build` | Build de producción |
-| `npm run preview` | Preview del build de producción |
-| `npm test` | Ejecutar suite de tests |
+| `npm run dev` | Development server with HMR |
+| `npm run build` | Production build |
+| `npm run preview` | Preview the production build |
+| `npm test` | Run the test suite |
 
-## Construcción (Build)
+## Build
 
 ```bash
 npm run build
 ```
 
-Los archivos resultantes se generarán en el directorio `dist/`, minificados y optimizados para producción.
+The resulting files are generated in the `dist/` directory, minified and optimized for production.
 
 ## Tests
 
-El proyecto cuenta con una suite de tests unitarios con Vitest y Testing Library:
+The project has a unit test suite built with Vitest and Testing Library:
 
 ```bash
 npm test
 ```
 
-Cobertura actual: **17 tests** en 5 archivos (componentes + hook `useScrollSpy`).
+Current coverage: **17 tests** across 5 files (components + `useScrollSpy` hook).
 
-## Contacto
+## Contact
 
 **Agustín Colombo**
 
-- [LinkedIn](https://www.linkedin.com/in/agustín-colombo)
+- [LinkedIn](https://www.linkedin.com/in/agustin-colombo-dev/)
 - [GitHub](https://github.com/Agustincolombo)
