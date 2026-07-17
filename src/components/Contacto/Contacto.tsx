@@ -1,6 +1,6 @@
 import s from './Contacto.module.sass'
 
-const EMAIL = 'aguscolombo2009@hotmail.com'
+const EMAIL = 'agustin.colombo.dev@gmail.com'
 
 export function Contacto() {
   return (
