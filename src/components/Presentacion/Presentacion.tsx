@@ -31,7 +31,7 @@ export function Presentacion({ onNavigate }: PresentacionProps) {
             <span aria-hidden="true">·</span>
             <button onClick={() => onNavigate('contacto')}>Contact</button>
           </div>
-          <a href="https://drive.google.com/uc?export=download&id=13hsRidPOKuo0znhmHManmhYY4l81rZEf" target="_blank" rel="noopener noreferrer" className={s['cv-button']}>
+          <a href="https://drive.google.com/uc?export=download&id=1MJBa5C-S1dBenJ_6cQm0RO-LeOj1yqgN" target="_blank" rel="noopener noreferrer" className={s['cv-button']}>
             Download CV ↓
           </a>
         </nav>
